@@ -38,13 +38,13 @@
     <table>
         <thead>
             <tr>
-                <th>Code Catalogue</th>
-                <th>Titre</th>
-                <th>Auteur</th>
-                <th>Editeur</th>
-                <th>Thème</th>
-                <th>Date d'acquisition</th>
-                <th>Code Usure</th>
+                <th>Numéro de Matricule</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <th>Date D'adhésion</th>
+                <th>Date De Naissance</th>
+                <th>Catégorie Proféssionnelle</th>
                 <th>Action</th>
             </tr>
         </thead>
