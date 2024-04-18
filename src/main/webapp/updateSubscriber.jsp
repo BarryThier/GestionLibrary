@@ -78,7 +78,7 @@
         </div>
         <div>
             <label for="dateAdh">Date D'adhésion:</label>
-            <input type="text" id="dateAdh" name="dateAdh" value = "${subscriber.dateAdh}" required>
+            <input type="date" id="dateAdh" name="dateAdh" value = "${subscriber.dateAdh}" required>
         </div>
         <div>
             <label for="dateNaissance">Date De Naissance:</label>

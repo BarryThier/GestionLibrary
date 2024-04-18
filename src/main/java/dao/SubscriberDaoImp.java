@@ -100,7 +100,7 @@ public class SubscriberDaoImp implements ISubscriberDao{
 	public Subscriber updateSubscriber(Subscriber subscriber) {
 		Connection connection = SingletonConnection.getConnection();
 		try {
-			PreparedStatement ps = connection.prepareStatement("UPDATE subscriber SET Nom = ?, Adresse = ?, Telephone = ?, DateAdh = ?, DateNaissance = ?, CatégorieProf = ? WHERE NumMatricule = ?");
+			PreparedStatement ps = connection.prepareStatement("UPDATE subscriber SET Nom = ?, Adresse = ?, Telephone = ?, DateAdh = ?, DateNaissance = ?, CategorieProfessionnelle = ? WHERE NumMatricule = ?");
 			ps.setString(1, subscriber.getName());
 			ps.setString(2, subscriber.getAdresse());
 			ps.setString(3, subscriber.getPhone());

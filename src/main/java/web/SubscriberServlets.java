@@ -74,11 +74,9 @@ public class SubscriberServlets extends HttpServlet {
         
         Subscriber newSubscriber = new Subscriber(name, adresse, telephone, dateAdh,dateNaissance,professionalCategory);
         metier.save(newSubscriber);
-        request.setAttribute("subscriber", newSubscriber);
-        System.out.println(newSubscriber.toString());
+ 
 
-        //RequestDispatcher dispatcher = request.getRequestDispatcher("/confirm.jsp");
-        //dispatcher.forward(request, response);
+    
         response.sendRedirect(request.getContextPath() + "/allSubscriber");
     }
 	  private void searchSubscriber(HttpServletRequest request, HttpServletResponse response)
@@ -122,8 +120,6 @@ public class SubscriberServlets extends HttpServlet {
 	    
 	    metier.updateSubscriber(updateSubscriber);
 	    
-	   
-	    request.setAttribute("Subscriber", updateSubscriber);
 
 	
 	    response.sendRedirect(request.getContextPath() + "/allSubscriber");
