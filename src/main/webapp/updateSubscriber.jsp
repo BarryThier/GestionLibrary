@@ -62,31 +62,31 @@
         <h2>Modifiez un abonné</h2>
         <div>
             <label for="numMatricule">Num de Matricule:</label>
-            <input type="text" id="numMatricule" name="numMatricule" value = "${book.numMatricule}" required>
+            <input type="text" id="numMatricule" name="numMatricule" value = "${subscriber.numMatricule}" required>
         </div>
         <div>
             <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" value = "${book.name}" required>
+            <input type="text" id="name" name="name" value = "${subscriber.name}" required>
         </div>
         <div>
             <label for="adresse">Adresse:</label>
-            <input type = "text" id = "adresse" value = "${book.adresse}" name = "adresse">
+            <input type = "text" id = "adresse" value = "${subscriber.adresse}" name = "adresse">
         </div>
         <div>
             <label for="telephone">Téléphone: </label>
-            <input type="text" id="telephone" name="telephone" value = "${book.phone}"required>
+            <input type="text" id="telephone" name="telephone" value = "${subscriber.phone}"required>
         </div>
         <div>
             <label for="dateAdh">Date D'adhésion:</label>
-            <input type="text" id="dateAdh" name="dateAdh" value = "${book.dateAdh}" required>
+            <input type="text" id="dateAdh" name="dateAdh" value = "${subscriber.dateAdh}" required>
         </div>
         <div>
             <label for="dateNaissance">Date De Naissance:</label>
-            <input type="date" id="dateNaissance" name="dateNaissance" value = "${book.yearBirth}" required>
+            <input type="date" id="dateNaissance" name="dateNaissance" value = "${subscriber.yearBirth}" required>
         </div>
         <div>
             <label for="professionalCategory">Catégorie Proféssionnelle:</label>
-            <input type="text" id="professionalCategory" name="professionalCategory"  value = "${book.professionalCategory}"required>
+            <input type="text" id="professionalCategory" name="professionalCategory"  value = "${subscriber.professionalCategory}"required>
         </div>
         <div>
             <button type="submit">Modifiez</button>

@@ -34,7 +34,7 @@
     <div class="add-button">
     	<a href="${pageContext.request.contextPath}/searchForm.jsp">Rechercher un abonné</a>
     </div>
-    <h2>Liste des livres</h2>
+    <h2>Liste Des abonnés!</h2>
     <table>
         <thead>
             <tr>
@@ -59,8 +59,8 @@
                     <td>${not empty subscriber.yearBirth ? subscriber.yearBirth : 'N/A'}</td>
                     <td>${not empty subscriber.professionalCategory ? subscriber.professionalCategory: 'N/A'}</td>
                     <td>
-   						 <a href="${pageContext.request.contextPath}/editSubscriber?codeCatalogue=${book.codeCatalogue}">Modifier</a>
-    					<a href="${pageContext.request.contextPath}/deleteSubscriber?codeCatalogue=${book.codeCatalogue}">Supprimer</a>
+   						 <a href="${pageContext.request.contextPath}/editSubscriber?numMatricule=${subscriber.numMatricule}">Modifier</a>
+    					<a href="${pageContext.request.contextPath}/deleteSubscriber?numMatricule=${subscriber.numMatricule}">Supprimer</a>
 					</td>
                 </tr>
             </c:forEach>

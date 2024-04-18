@@ -50,11 +50,13 @@
     <c:if test="${not empty searchedSubscriber}">
         <table>
             <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Date de création</th>
-                <th>Auteur</th>
+                <th>Numéro de Matricule</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <th>Date D'adhésion</th>
+                <th>Date De Naissance</th>
+                <th>Catégorie Proféssionnelle</th>
                 <th>Actions</th>
             </tr>
             <tr>

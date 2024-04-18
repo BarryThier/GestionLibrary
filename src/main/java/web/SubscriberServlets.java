@@ -100,7 +100,7 @@ public class SubscriberServlets extends HttpServlet {
 	            throws ServletException, IOException {
 	        int numMatricule = Integer.parseInt(request.getParameter("numMatricule"));
 	        Subscriber subscriber = metier.getSubscriber(numMatricule);
-	        request.setAttribute("book", subscriber);
+	        request.setAttribute("subscriber", subscriber);
 	        
 
 	        RequestDispatcher dispatcher = request.getRequestDispatcher("/updateSubscriber.jsp");
