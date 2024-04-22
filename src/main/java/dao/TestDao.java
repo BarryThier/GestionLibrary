@@ -3,17 +3,16 @@ package dao;
 import java.util.List;
 
 import metier.entities.Books;
+import metier.entities.User;
 
 public class TestDao {
 
 	public static void main(String[] args) {
-		BooksDaoImpl dao = new BooksDaoImpl();
-		Books book = new Books("Une saison au congo", "ai", "fezsd", "dfxdsx", "2012/12/20", "dsfx");
-		dao.save(book);
-		System.out.println("Modification");
-		dao.updateBooks(book);
-		System.out.println(book.toString());
-		System.out.println(dao.getAllBooks());
+		
+		User user = new User("Barry Thierno Ousmane", "Etudiant", "barrythiernoousmane326@gmail.com", "Ousmane@2002");
+		UserDaoImpl metier = new UserDaoImpl();
+		metier.save(user);
+		System.out.println(user.toString());
 		/* System.out.println("Chercher les livres");
 			List<Books> books = dao.BooksForMc("%M%");
 			for (Books boo : books) {
