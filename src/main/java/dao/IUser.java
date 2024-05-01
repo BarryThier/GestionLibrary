@@ -11,4 +11,5 @@ public interface IUser {
 	public User getUser (long user_id);
 	public User updateUser(User user);
 	public void deleteUser(long user_id);
+	public boolean authenticate (String pseudo, String password);
 }

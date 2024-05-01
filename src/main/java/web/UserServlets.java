@@ -6,18 +6,20 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import jakarta.servlet.http.HttpSession;
 import metier.entities.User;
 
 import java.io.IOException;
 import java.util.List;
+
+
 import dao.IUser;
 import dao.UserDaoImpl;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-@WebServlet(name = "UserServlet",urlPatterns = {"/saveUser","/allUsers","/updateUser","/deleteUser","/editUser","/searchUser"})
+@WebServlet(name = "UserServlet",urlPatterns = {"/saveUser","/allUsers","/updateUser","/deleteUser","/editUser","/searchUser","/login"})
 public class UserServlets extends HttpServlet {
     private static final long serialVersionUID = 1L;
      
@@ -43,6 +45,8 @@ public class UserServlets extends HttpServlet {
             editUser(request, response);
         }else if ("/searchUser".equals(path)) {
             searchUser(request, response);
+        }else if ("/login".equals(path)) {
+        	login(request, response);
         }
     }
 
@@ -131,5 +135,20 @@ public class UserServlets extends HttpServlet {
         long user_id = Long.parseLong(request.getParameter("user_id"));
         metier.deleteUser(user_id);
         response.sendRedirect(request.getContextPath() + "/allUsers");
+    }
+    
+    private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String pseudo = request.getParameter("pseudo");
+        String password = request.getParameter("password");
+        String hashedPassword = hashPassword(password);
+        
+        boolean isAuthenticate = metier.authenticate(pseudo, hashedPassword);
+        
+        if (isAuthenticate) {
+        	HttpSession session = request.getSession();
+        	session.setAttribute("Pseudo", pseudo);
+        	response.sendRedirect(request.getContextPath() + "/allUsers");
+        }
+        
     }
 }

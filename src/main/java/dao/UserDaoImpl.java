@@ -135,4 +135,34 @@ public class UserDaoImpl implements IUser {
 		
 	}
 
+	@Override
+	public boolean authenticate(String pseudo, String password) {
+		Connection connection = SingletonConnection.getConnection();
+		try {
+			PreparedStatement ps = connection.prepareStatement("SELECT * FROM user WHERE Pseudo = ? AND MotDePass = ?");
+			ps.setString(1, pseudo);
+			ps.setString(2, password);
+			
+			ResultSet rs = ps.executeQuery();
+			
+		
+			
+			if(rs.next()) {
+				String userPassword = rs.getString("MotDePass");
+				
+				if(password.equals(userPassword) == true) {
+					return true;
+				}else {
+					return false;
+				}
+			}
+		
+			ps.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 }
