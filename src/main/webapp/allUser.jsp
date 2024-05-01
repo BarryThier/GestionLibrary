@@ -42,7 +42,6 @@
                 <th>FullName</th>
                 <th>Pseudo</th>
                 <th>Email</th>
-                <th>PassWord</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -53,7 +52,6 @@
                     <td>${not empty user.fullName ? user.fullName : 'N/A'}</td>
                     <td>${not empty user.pseudo ? user.pseudo : 'N/A'}</td>
                      <td>${not empty user.email ? user.email : 'N/A'}</td>
-                    <td>${not empty user.password ? user.password : 'N/A'}</td>
                    
                     <td>
    						<a href="${pageContext.request.contextPath}/editUser?user_id=${user.user_id}">Modifier</a>
