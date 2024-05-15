@@ -125,6 +125,7 @@ public class UserDaoImpl implements IUser {
 			PreparedStatement ps = connection.prepareStatement("DELETE FROM user WHERE User_id = ?");
 			ps.setLong(1, user_id);
 			ps.executeUpdate();
+			System.out.println("Suppréssion éffectuée avec succès");
 			ps.close();
 			
 			
