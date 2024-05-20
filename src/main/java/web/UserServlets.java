@@ -148,6 +148,8 @@ public class UserServlets extends HttpServlet {
         	HttpSession session = request.getSession();
         	session.setAttribute("Pseudo", pseudo);
         	response.sendRedirect(request.getContextPath() + "/allUsers");
+        }else if (!isAuthenticate) {
+        	response.sendRedirect(request.getContextPath() + "/login.jsp");
         }
         
     }
